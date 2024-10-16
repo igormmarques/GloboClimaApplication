@@ -1,0 +1,76 @@
+[
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.FavoritesController",
+    "Method": "AddFavorite",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "favorite",
+        "Type": "GloboClimaAPI.Models.FavoriteModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.FavoritesController",
+    "Method": "GetFavorites",
+    "RelativePath": "api/Favorites",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.FavoritesController",
+    "Method": "RemoveFavorite",
+    "RelativePath": "api/Favorites/{cityName}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "cityName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.LoginController",
+    "Method": "Login",
+    "RelativePath": "api/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "credentials",
+        "Type": "GloboClimaAPI.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.UsersController",
+    "Method": "Register",
+    "RelativePath": "api/Users",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GloboClimaAPI.Models.UserRegistrationModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

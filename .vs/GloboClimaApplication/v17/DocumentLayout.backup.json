@@ -1,0 +1,210 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\migrations\\20241016012302_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\migrations\\20241016012302_initialmigration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\data\\logindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\data\\logindata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\controllers\\favoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\controllers\\favoritescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\data\\favoritesdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\data\\favoritesdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\controllers\\weathercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\models\\loginmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\models\\favoritesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\models\\favoritesmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\globoclimaapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\globoclimaapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|c:\\users\\im-ma\\source\\repos\\globoclimaapi\\globoclimaapi_final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F9AD5036-9D4D-45A9-ACCD-FE2FBDC7A80E}|GloboClimaAPI_final\\GloboClimaAPI.csproj|solutionrelative:globoclimaapi_final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "20241016012302_InitialMigration.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Migrations\\20241016012302_InitialMigration.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Migrations\\20241016012302_InitialMigration.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Migrations\\20241016012302_InitialMigration.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Migrations\\20241016012302_InitialMigration.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAQwEAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T01:25:34.214Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginData.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\LoginData.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Data\\LoginData.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\LoginData.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Data\\LoginData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:18:51.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FavoritesData.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\FavoritesData.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Data\\FavoritesData.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\FavoritesData.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Data\\FavoritesData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:15:23.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-16T00:15:15.743Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeatherController.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Controllers\\WeatherController.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Controllers\\WeatherController.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Controllers\\WeatherController.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Controllers\\WeatherController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAYwB8AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T23:18:33.678Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FavoritesModel.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Models\\FavoritesModel.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Models\\FavoritesModel.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Models\\FavoritesModel.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Models\\FavoritesModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T22:46:58.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginModel.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Models\\LoginModel.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Models\\LoginModel.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Models\\LoginModel.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Models\\LoginModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T22:46:44.696Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FavoritesController.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Controllers\\FavoritesController.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Controllers\\FavoritesController.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Controllers\\FavoritesController.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Controllers\\FavoritesController.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAB4AAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T22:36:45.055Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GloboClimaAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\GloboClimaAPI.csproj",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\GloboClimaAPI.csproj",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\GloboClimaAPI.csproj",
+              "RelativeToolTip": "GloboClimaAPI_final\\GloboClimaAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-15T22:30:42.739Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Program.cs",
+              "RelativeDocumentMoniker": "GloboClimaAPI_final\\Program.cs",
+              "ToolTip": "C:\\Users\\im-ma\\source\\repos\\GloboClimaAPI\\GloboClimaAPI_final\\Program.cs",
+              "RelativeToolTip": "GloboClimaAPI_final\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T22:28:18.425Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

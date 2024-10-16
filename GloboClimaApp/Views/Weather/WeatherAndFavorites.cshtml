@@ -1,0 +1,98 @@
+﻿@using System.Security.Claims
+@model GloboClimaApp.Models.WeatherViewModel
+
+<div class="container mt-5">
+    <!-- Botão de Logout -->
+    <div class="d-flex justify-content-end mb-4">
+        <form asp-action="Logout" method="post">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+
+    <!-- Exibir o nome do usuário -->
+    <h3>Bem-vindo, @User.Identity.Name!</h3>
+
+    <!-- Formulário de consulta do clima -->
+    <h2>Consulta de Clima</h2>
+    <form asp-action="GetWeatherInfo" method="post" class="mb-5">
+        <div class="form-group">
+            <label for="cityName">Cidade:</label>
+            <input asp-for="CityName" class="form-control" id="cityName" placeholder="Insira o nome da cidade" />
+            <span asp-validation-for="CityName" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Consultar Clima</button>
+    </form>
+
+    <!-- Exibir informações do clima -->
+    @if (Model.WeatherInfo != null)
+    {
+        <div class="card p-4 shadow-lg bg-dark text-white">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center">
+                        <img src="@($"https://openweathermap.org/img/wn/{Model.WeatherInfo.Weather[0].Icon}@2x.png")" alt="weather-icon" />
+                        <h1 class="display-4 ml-3">@Model.WeatherInfo.Main.Temp °C</h1>
+                    </div>
+                    <p class="lead">
+                        @Model.WeatherInfo.Weather[0].Description <br />
+                        Umidade: @Model.WeatherInfo.Main.Humidity% <br />
+                        Vento: @Model.WeatherInfo.Wind.Speed km/h
+                    </p>
+                </div>
+                <div class="col-md-6 text-right">
+                    <h3>Clima - @Model.WeatherInfo.Name</h3>
+                    <p>Nascer do sol: @DateTimeOffset.FromUnixTimeSeconds(Model.WeatherInfo.Sys.Sunrise).ToLocalTime()</p>
+                    <p>Pôr do sol: @DateTimeOffset.FromUnixTimeSeconds(Model.WeatherInfo.Sys.Sunset).ToLocalTime()</p>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Temperatura mínima: @Model.WeatherInfo.Main.Temp_Min °C</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Temperatura máxima: @Model.WeatherInfo.Main.Temp_Max °C</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Pressão: @Model.WeatherInfo.Main.Pressure hPa</p>
+                </div>
+            </div>
+
+            <form asp-action="AddToFavorites" method="post" class="mt-3">
+                <input type="hidden" name="cityName" value="@Model.CityName" />
+                <input type="hidden" name="userId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                <button type="submit" class="btn btn-success btn-lg">Adicionar aos Favoritos</button>
+            </form>
+
+        </div>
+    }
+
+    <!-- Exibir cidades favoritas -->
+    @if (Model.FavoriteCities != null && Model.FavoriteCities.Any())
+    {
+        <div class="mt-5">
+            <h3>Cidades Favoritas</h3>
+            <div class="row">
+                @foreach (var city in Model.FavoriteCities)
+                {
+                    <div class="col-md-4">
+                        <div class="card mb-3 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">@city</h5>
+                                <form asp-action="RemoveFromFavorites" method="post">
+                                    <input type="hidden" name="cityName" value="@city" />
+                                    <input type="hidden" name="userId" value="@User.FindFirstValue(ClaimTypes.NameIdentifier)" />
+                                    <button type="submit" class="btn btn-danger">Remover</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,44 @@
+﻿@model GloboClimaApp.Models.LoginViewModel
+
+<div class="container">
+    <h2>Login</h2>
+    <form asp-action="Index" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input asp-for="Username" class="form-control" id="username" placeholder="Enter Username" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input asp-for="Password" class="form-control" id="password" type="password" placeholder="Enter Password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+    @if (ViewData.ModelState.ErrorCount > 0)
+    {
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+
+    <hr />
+    <div>
+        <p>
+            Não tem uma conta?
+            <a asp-controller="Register" asp-action="Index" class="btn btn-link">Cadastre-se</a>
+        </p>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
