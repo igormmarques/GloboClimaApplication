@@ -60,7 +60,7 @@ public class WeatherController : Controller
     private async Task<WeatherInfo> FetchWeatherFromApi(string cityName)
     {
         var client = _httpClientFactory.CreateClient();
-        AddJwtToClient(client);  // Adiciona o token no cabeçalho
+        AddJwtToClient(client);
 
         var apiKey = _configuration["WeatherApiSettings:APIKey"];
         var baseUrl = _configuration["WeatherApiSettings:BaseUrl"];
@@ -79,7 +79,7 @@ public class WeatherController : Controller
     private async Task<List<string>> GetFavoriteCitiesAsync()
     {
         var client = _httpClientFactory.CreateClient();
-        AddJwtToClient(client);  // Adiciona o token no cabeçalho
+        AddJwtToClient(client); 
 
         var baseUrl = _configuration["FavoritesApiSettings:BaseUrl"];
         var response = await client.GetAsync($"{baseUrl}Favorites");

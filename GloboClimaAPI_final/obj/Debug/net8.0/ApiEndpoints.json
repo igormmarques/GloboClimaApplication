@@ -22,7 +22,13 @@
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "token",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
@@ -37,6 +43,11 @@
         "Name": "cityName",
         "Type": "System.String",
         "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.String",
+        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -52,6 +63,22 @@
       {
         "Name": "credentials",
         "Type": "GloboClimaAPI.Models.LoginModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GloboClimaAPI.Controllers.PasswordController",
+    "Method": "UpdatePassword",
+    "RelativePath": "api/Password/update-password",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "GloboClimaAPI.Controllers.UpdatePasswordModel",
         "IsRequired": true
       }
     ],

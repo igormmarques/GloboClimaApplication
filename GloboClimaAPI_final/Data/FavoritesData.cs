@@ -5,14 +5,16 @@ namespace GloboClimaAPI.Data
 {
     public class FavoritesData
     {
-        [Key]  // Marca a propriedade como chave primária
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]  // Geração automática do ID
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Required]
         public string CityName { get; set; }
-        public string UserId { get; set; }  // Identificação do usuário no banco de dados
 
-        // Esta relação pode ser usada, mas não é necessária para o DTO
+        [Required]
+        public string UserId { get; set; }
+
         [ForeignKey("UserId")]
         public LoginData User { get; set; }
     }

@@ -2,7 +2,10 @@
 using GloboClimaAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 
 namespace GloboClimaAPI.Controllers
 {
@@ -11,10 +14,12 @@ namespace GloboClimaAPI.Controllers
     public class FavoritesController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly IConfiguration _configuration;
 
-        public FavoritesController(AppDbContext context)
+        public FavoritesController(AppDbContext context, IConfiguration configuration)
         {
             _context = context;
+            _configuration = configuration;
         }
 
         // Método auxiliar para converter FavoriteModel para FavoriteData
@@ -49,7 +54,7 @@ namespace GloboClimaAPI.Controllers
                 }
 
                 var userId = _context.Users
-                    .Where(u => u.UserName == favorite.UserId)
+                    .Where(u => u.Id == favorite.UserId)
                     .Select(u => u.Id)
                     .FirstOrDefault();
 
@@ -80,30 +85,29 @@ namespace GloboClimaAPI.Controllers
             }
         }
 
-        // Obtém os favoritos do usuário
         [HttpGet]
-        public async Task<IActionResult> GetFavorites()
+        public async Task<IActionResult> GetFavorites([FromQuery] string token)
         {
             try
             {
-                // Obtém o userId diretamente das claims do token JWT
-                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+                // Validar o token recebido como parâmetro
+                var principal = ValidateToken(token);
+                if (principal == null)
+                {
+                    return Unauthorized("Token inválido ou expirado.");
+                }
 
-                if (string.IsNullOrEmpty(userId))
+                var userId = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
+
+                if (userId == null)
                 {
                     return Unauthorized("User ID not found in token claims.");
                 }
 
-                // Busca as cidades favoritas no banco de dados
                 var favorites = await _context.Favorites
                     .Where(f => f.UserId == userId)
-                    .Select(f => f.CityName)
+                    .Select(f => new { f.CityName })
                     .ToListAsync();
-
-                if (!favorites.Any())
-                {
-                    return Ok("No favorites added yet.");
-                }
 
                 return Ok(favorites);
             }
@@ -114,17 +118,59 @@ namespace GloboClimaAPI.Controllers
         }
 
 
+        // Método para validar o token JWT
+        private ClaimsPrincipal ValidateToken(string token)
+        {
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            // Obter as configurações do token a partir do appsettings.json
+            var key = Encoding.UTF8.GetBytes(_configuration["Jwt:SigningKey"]);
+            var issuer = _configuration["Jwt:Issuer"];
+            var audience = _configuration["Jwt:Audience"];
+
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(key),
+                ValidateIssuer = !string.IsNullOrEmpty(issuer),
+                ValidIssuer = issuer,
+                ValidateAudience = !string.IsNullOrEmpty(audience),
+                ValidAudience = audience,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero // Reduzir tolerância de tempo para zero
+            };
+
+            try
+            {
+                // Validar o token e retornar o ClaimsPrincipal
+                return tokenHandler.ValidateToken(token, validationParameters, out _);
+            }
+            catch (SecurityTokenExpiredException)
+            {
+                Console.WriteLine("Token expirado.");
+                return null;
+            }
+            catch (SecurityTokenInvalidSignatureException)
+            {
+                Console.WriteLine("Assinatura do token inválida.");
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erro ao validar o token: {ex.Message}");
+                return null;
+            }
+        }
+
         // Remove uma cidade dos favoritos
         [HttpDelete("{cityName}")]
-        public async Task<IActionResult> RemoveFavorite(string cityName)
+        public async Task<IActionResult> RemoveFavorite(string cityName, [FromQuery] string userId)
         {
             try
             {
-                var userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier)?.Value;
-
-                if (userId == null)
+                if (string.IsNullOrEmpty(userId))
                 {
-                    return Unauthorized("User ID not found in token claims.");
+                    return Unauthorized("User ID not found.");
                 }
 
                 var favorite = await _context.Favorites

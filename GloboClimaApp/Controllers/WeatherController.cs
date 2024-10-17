@@ -113,25 +113,31 @@ public class WeatherController : Controller
     {
         var baseUrl = _configuration["FavoritesApiSettings:BaseUrl"];
 
-        // Problema a resolver.
-        if (!AddJwtToClient(client))
+        // Recupera o token JWT armazenado na sessão
+        var token = HttpContext.Session.GetString("JWTToken");
+        if (string.IsNullOrEmpty(token))
         {
             Console.WriteLine("Token JWT não encontrado.");
             return new List<string>();
         }
 
+        // Montar a URL incluindo o token como um parâmetro de consulta
+        var requestUrl = $"{baseUrl}favorites?token={token}";
+
         // Fazer a requisição para a API de favoritos
-        var response = await client.GetAsync($"{baseUrl}favorites");
+        var response = await client.GetAsync(requestUrl);
 
         if (response.IsSuccessStatusCode)
         {
-            var favoriteCities = await response.Content.ReadFromJsonAsync<List<string>>();
-            return favoriteCities ?? new List<string>();
+            // Ajuste para lidar com o JSON retornando objetos ao invés de strings simples
+            var favoriteCities = await response.Content.ReadFromJsonAsync<List<FavoriteModel>>();
+
+            // Transforme a lista de objetos em uma lista de strings, se necessário
+            return favoriteCities?.Select(f => f.CityName).ToList() ?? new List<string>();
         }
 
         return new List<string>();
     }
-
 
     private async Task AddOrRemoveCityFromFavoritesAsync(HttpClient client, string cityName, string userId)
     {
@@ -139,6 +145,7 @@ public class WeatherController : Controller
         var baseUrl = _configuration["FavoritesApiSettings:BaseUrl"];
         var endpointUrl = $"{baseUrl.TrimEnd('/')}/favorites";
 
+        // Fazer a requisição POST para adicionar a cidade
         var response = await client.PostAsJsonAsync(endpointUrl, favorite);
 
         if (response.IsSuccessStatusCode)
@@ -147,7 +154,8 @@ public class WeatherController : Controller
         }
         else if (response.StatusCode == System.Net.HttpStatusCode.Conflict)
         {
-            var deleteUrl = $"{baseUrl.TrimEnd('/')}/favorites/{cityName}";
+            // Se a cidade já estiver nos favoritos, tente removê-la
+            var deleteUrl = $"{baseUrl.TrimEnd('/')}/favorites/{cityName}?userId={userId}";
             var deleteResponse = await client.DeleteAsync(deleteUrl);
 
             if (deleteResponse.IsSuccessStatusCode)
@@ -165,12 +173,12 @@ public class WeatherController : Controller
         }
     }
 
+
     [HttpPost]
     public IActionResult Logout()
     {
         HttpContext.Session.Clear();
         return RedirectToAction("Index", "Login");
     }
-
 
 }
